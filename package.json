@@ -12,10 +12,10 @@
   "keywords": [
     "npm",
     "scripts",
+    "command",
     "helper",
-    "simple",
     "run",
-    "file"
+    "module"
   ],
   "author": "Nathan Jacobs",
   "license": "MIT",
