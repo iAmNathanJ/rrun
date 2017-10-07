@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Require and run a js file with one command",
   "main": "index.js",
-  "bin": ".",
+  "bin": "./index.js",
   "scripts": {
     "prepublish": "babel src/rrun.js -o ./index.js",
     "dev": "babel src/rrun.js -o ./index.js -w",
