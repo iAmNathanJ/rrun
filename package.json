@@ -1,0 +1,27 @@
+{
+  "name": "rrun",
+  "version": "1.0.0",
+  "description": "Require and run a js file with one command",
+  "main": "index.js",
+  "bin": ".",
+  "scripts": {
+    "prepublish": "babel src/rrun.js -o ./index.js",
+    "dev": "babel src/rrun.js -o ./index.js -w",
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "npm",
+    "scripts",
+    "helper",
+    "simple",
+    "run",
+    "file"
+  ],
+  "author": "Nathan Jacobs",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "shelljs": "^0.7.8"
+  }
+}
