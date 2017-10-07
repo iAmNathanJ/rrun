@@ -7,9 +7,18 @@ function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
 
 var path = require('path');
 
+var check = function check(exp, msg) {
+  if (!exp) throw new Error(msg);
+};
+
 var _process$argv$slice = process.argv.slice(2),
     _process$argv$slice2 = _toArray(_process$argv$slice),
     file = _process$argv$slice2[0],
     args = _process$argv$slice2.slice(1);
 
-require(path.resolve(process.cwd(), file)).apply(undefined, _toConsumableArray(args));
+check(typeof file === 'string', `Module path must be a string: [${typeof file}] ${file}`);
+
+var fn = require(path.resolve(process.cwd(), file));
+check(typeof fn === 'function', `Module is not executable: [${typeof fn}] ${fn}`);
+
+fn.apply(undefined, _toConsumableArray(args));
