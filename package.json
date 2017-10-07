@@ -1,6 +1,10 @@
 {
   "name": "rrun",
   "version": "1.0.4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iAmNathanJ/rrun"
+  },
   "description": "Require and run a js file with one command",
   "main": "index.js",
   "bin": "./index.js",
