@@ -42,7 +42,7 @@ And you can `rrun` it from your npm scripts:
 **PSA:** You can do the same thing without using `rrun`:
 ```json
 "scripts": {
-  "sass": "node -e \"require('path/to/module')()\""
+  "any-task": "node -e \"require('path/to/module')()\""
 }
 ```
 But ☝️ that is kind of ugly and co-workers may find it confusing.
