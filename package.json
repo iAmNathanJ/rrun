@@ -1,6 +1,6 @@
 {
   "name": "rrun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Require and run a js file with one command",
   "main": "index.js",
   "bin": ".",
