@@ -1,17 +1,28 @@
 {
   "name": "rrun",
   "version": "1.0.5",
+  "description": "Require and run a js file with one command",
   "repository": {
     "type": "git",
     "url": "https://github.com/iAmNathanJ/rrun"
   },
-  "description": "Require and run a js file with one command",
-  "main": "index.js",
-  "bin": "./index.js",
+  "main": "lib/rrun.js",
+  "bin": {
+    "rrun": "bin/rrun.js"
+  },
   "scripts": {
-    "prepublish": "babel src/rrun.js -o ./index.js",
-    "dev": "babel src/rrun.js -o ./index.js -w",
+    "build": "babel src -d lib",
+    "dev": "npm run build -- -w",
+    "predev": "rm -rf bin/ && mkdir bin",
+    "prepare": "npm run build",
     "test": "node test/test.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/register": "^7.0.0",
+    "shelljs": "^0.7.8"
   },
   "keywords": [
     "npm",
@@ -21,11 +32,14 @@
     "run",
     "module"
   ],
+  "files": [
+    "lib",
+    "bin",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
   "author": "Nathan Jacobs",
-  "license": "MIT",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "shelljs": "^0.7.8"
-  }
+  "license": "MIT"
 }

@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-const path = require('path');
+import path from 'path';
 
 const check = (exp, msg) => {
   if (!exp) throw new Error(msg);
@@ -10,6 +10,5 @@ check(typeof file === 'string', `Module path must be a string: [${typeof file}] 
 
 const fn = require(path.resolve(process.cwd(), file));
 check(typeof fn === 'function', `Module is not executable: [${typeof fn}] ${fn}`);
-
 
 fn(...args);

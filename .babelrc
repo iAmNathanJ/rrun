@@ -1,8 +1,8 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "targets": {
-        "node": "4.0"
+        "node": "8.0"
       }
     }]
   ]
